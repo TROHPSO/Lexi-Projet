@@ -24,7 +24,6 @@ dependencies {
     implementation("org.jetbrains.compose.material3:material3-desktop:1.5.11")
 
 
-
 }
 
 compose.desktop {
