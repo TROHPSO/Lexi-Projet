@@ -10,15 +10,21 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 
-import dev.lexi.ui.screens.App
+import dev.lexi.ui.screens.Desktop
+import ui.screens.Login
+import ui.screens.navigation.Navigation
 
+    @Composable
+    fun App() {
+        Navigation()
+    }
 
-
+    
 fun main() = application {
     Window(
-        onCloseRequest = ::exitApplication, 
+        onCloseRequest = ::exitApplication,
         title = "Lexi - Knowledge Base"
-        ) {        
+        ) {
         App()
     }
 }

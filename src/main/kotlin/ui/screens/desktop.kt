@@ -37,36 +37,52 @@
     import androidx.compose.ui.unit.dp
     import androidx.compose.ui.unit.sp
     import org.jetbrains.skia.FontWeight
+    import ui.screens.Popup
+    import ui.screens.navigation.Navigation
 
     @Composable
     @Preview
-    fun App() {
-        var text by remember { mutableStateOf("Ajouter une collecton") }
-        var searchText by remember { mutableStateOf("") }
+      fun Desktop() {
+        var text        by remember { mutableStateOf("Ajouter une collecton") }
+        var searchText  by remember { mutableStateOf("") }
+
+        val showPopup = remember { mutableStateOf(false) }
 
         MaterialTheme {
             Column(
-                modifier = Modifier.fillMaxSize(),
+                modifier            = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Button(onClick = { }) {
+                Button(onClick = {
+                    showPopup.value = true
+                    println("Ajout collection")
+                }) {
                     Text(text)
+                }
+
+                if (showPopup.value){
+                    Popup(
+                        openDialog = showPopup.value,
+                        onDismiss  = { showPopup.value = false }
+                    )
                 }
 
                 Spacer(Modifier.height(10.dp))
         
                 fun affichage(mot: String): String {
+
                     return mot
                 }
         
                 TextField(
-                    value = searchText,
+                    value         = searchText,
                     onValueChange = { searchText = it },
-                    singleLine = true,
-                    modifier = Modifier.onKeyEvent { keyEvent -> 
+                    singleLine    = true,
+                    modifier      = Modifier.onKeyEvent { keyEvent ->
                         if (keyEvent.key == Key.Enter) {
                             println("vous avez appuyé sur une touche")
+                            println(searchText)
                         }
                         true
                     },
@@ -97,7 +113,10 @@
         tagsFontSize            : TextUnit = 16.sp
 
     ) {
-
+        /* 
+        POP UP COLLECTION
+        élement a
+        */
         MaterialTheme {
             Box(
                 contentAlignment = Alignment.Center,
@@ -121,29 +140,29 @@
                                 .padding(16.dp)
                         ) {
                             Text( // Titre
-                                text = titreCollection,
-                                fontSize = titreFontSize,
+                                text       = titreCollection,
+                                fontSize   = titreFontSize,
                                 fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
-                                maxLines = 1,
-                                modifier = Modifier
+                                maxLines   = 1,
+                                modifier   = Modifier
                                     .fillMaxWidth()
                                     .padding(bottom = 8.dp),
                                 textAlign = TextAlign.Center
                             )
 
                             Text( // Description
-                                text = descriptionCollection,
-                                fontSize = descriptionFontSize,
-                                fontWeight = androidx.compose.ui.text.font.FontWeight.Normal,
-                                modifier = Modifier
+                                text        = descriptionCollection,
+                                fontSize    = descriptionFontSize,
+                                fontWeight  = androidx.compose.ui.text.font.FontWeight.Normal,
+                                modifier    = Modifier
                                     .fillMaxWidth()
                                     .padding(bottom = 8.dp)
                             )
                             Text( // Tags
-                                text = tags,
-                                fontSize = tagsFontSize,
-                                fontWeight = androidx.compose.ui.text.font.FontWeight.Medium,
-                                modifier = Modifier
+                                text        = tags,
+                                fontSize    = tagsFontSize,
+                                fontWeight  = androidx.compose.ui.text.font.FontWeight.Medium,
+                                modifier    = Modifier
                                     .fillMaxWidth()
                                     .padding(bottom = 30.dp)
                             )
@@ -154,7 +173,10 @@
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
                                 Button(
-                                    onClick = {  },
+                                    onClick = {
+                                        println("Button clicked")
+                                        // Ajoutez ici le code à exécuter lorsque le bouton est cliqué
+                                    },
                                     //modifier = Modifier.fillMaxSize(),
                                     //true
 
