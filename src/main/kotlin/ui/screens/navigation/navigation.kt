@@ -17,7 +17,6 @@ sealed class Screen {
 fun Navigation(){
     val currentScreen = remember { mutableStateOf<Screen>(Screen.Login) }
 
-
     when (val screen = currentScreen.value) {
         is Screen.Login     -> Login(onNavigateToSignup = {currentScreen.value = Screen.Signup } )
         is Screen.Signup    -> SignUp(onNavigateToLogin = {currentScreen.value = Screen.Login } )

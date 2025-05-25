@@ -33,8 +33,7 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 @Preview
-
-fun Login(onNavigateToSignup : () -> Unit) {
+fun Login(onNavigateToSignup: () -> Unit) {
     var email       by remember { mutableStateOf("") }
     var password    by remember { mutableStateOf("") }
 
@@ -100,15 +99,11 @@ fun Login(onNavigateToSignup : () -> Unit) {
                 )
             }
 
-            //Spacer(modifier = Modifier.padding(vertical = 1.dp))
-
-
-            Button(onClick = { onNavigateToSignup },
+            Button(
+                onClick = { onNavigateToSignup() },
                 modifier = Modifier.fillMaxWidth()){
-                    Text("Sign-Up ok")
-            }
-
-            
+                    Text("Sign-Up")
+                }
         }
     }
 }

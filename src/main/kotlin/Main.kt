@@ -14,12 +14,7 @@ import dev.lexi.ui.screens.Desktop
 import ui.screens.Login
 import ui.screens.navigation.Navigation
 
-    @Composable
-    fun App() {
-        Navigation()
-    }
 
-    
 fun main() = application {
     Window(
         onCloseRequest = ::exitApplication,
@@ -27,4 +22,9 @@ fun main() = application {
         ) {
         App()
     }
+}
+
+@Composable
+fun App() {
+    Navigation()
 }

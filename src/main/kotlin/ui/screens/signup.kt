@@ -9,10 +9,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 
 @Composable
-fun SignUp(onNavigateToLogin : () -> Unit) {
+fun SignUp(onNavigateToLogin: () -> Unit) {
     Column {
-        Button(onClick = { onNavigateToLogin},
-            modifier = Modifier.fillMaxWidth()){
+        Button(
+            onClick = { onNavigateToLogin() },
+            modifier = Modifier.fillMaxWidth()) {
                 Text("Login")
         }
     }
