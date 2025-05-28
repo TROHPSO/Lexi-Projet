@@ -8,7 +8,8 @@ Puis les données seront stockées dans une base de donnée SQLite. Elle forme a
 
 1. Ouvrir IntelliJ IDEA
 2. Aller sur le projet nommé "LEXI Projet"
-3. Cliquer sur l'icone pour lancer le projet situé en haut à droite "run desktop". 
+3. Mettre à jour le projet avec CTRL+T
+4. Cliquer sur l'icone pour lancer le projet situé en haut à droite "run desktop". 
 
 ### Connexion a l'application :
 E-Mail: examen@gmail.com
