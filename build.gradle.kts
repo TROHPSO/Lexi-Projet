@@ -22,6 +22,8 @@ dependencies {
     // With compose.desktop.common you will also lose @Preview functionality
     implementation(compose.desktop.currentOs)
     implementation("org.jetbrains.compose.material3:material3-desktop:1.5.11")
+    implementation("io.quarkus:quarkus-hibernate-orm-panache-kotlin:3.23.0")
+    implementation("io.quarkus:quarkus-jdbc-mariadb:3.23.0")
 }
 
 compose.desktop {
